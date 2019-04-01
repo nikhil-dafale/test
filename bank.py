@@ -12,7 +12,7 @@ class Account:
         if self.balance - amount >= self.min_balance:
             self.balance -= amount
         else:
-            print("sorry, insufficient funds")
+            print("sorry, you have insufficient funds")
 
     def printstatement(self):
         print("Account balance is:", self.balance)
@@ -24,7 +24,7 @@ class Current(Account):
         super().__init__(name, balance, min_balance=-1000)
 
     def __str__(self):
-        return "{}Current acc balance is:{}".format(self.name, self.balance)
+        return "{}Current account balance is:{}".format(self.name, self.balance)
 
 
 class Savings(Account):
@@ -33,11 +33,10 @@ class Savings(Account):
         super().__init__(name, balance, min_balance=0)
 
     def __str__(self):
-        return "{}Saving acc balance is:{}".format(self.name, self.balance)
+        return "{}Saving account balance is:{}".format(self.name, self.balance)
 
 
 x = Savings("nikhil", 10000)
-print(x)
 
 x.deposit(6000)
 x.printstatement()
